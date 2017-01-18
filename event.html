@@ -69,8 +69,15 @@
 
     var btn5 = document.getElementById("btn5");
 
-    eventUtil.addHandler(btn5,"click",showMsg2);
+//    eventUtil.addHandler(btn5,"click",showMsg2);
+//    eventUtil.removeHandler(btn5,"click",showMsg2);
+    eventUtil.addHandler(btn5,"click",function () {
+        showMsg("跨浏览器 事件程序处理");
+    });
 
+    eventUtil.removeHandler(btn5,"click",function () {
+        showMsg("跨浏览器 事件程序处理");
+    });
 </script>
 </body>
 </html>
