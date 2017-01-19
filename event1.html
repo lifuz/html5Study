@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件处理程序</title>
+</head>
+<body>
+
+<div id="box">
+    <a href="http://www.baidu.com" id="go">跳转</a>
+</div>
+
+<script type="text/javascript" src="js/event.js"></script>
+<script type="text/javascript">
+    window.onload = function () {
+        var box = document.getElementById("box");
+        var go = document.getElementById("go");
+
+        eventUtil.addHandler(box,"click",function () {
+            alert("我是整个父盒子");
+        });
+
+        eventUtil.addHandler(go,"click",function (e) {
+            e = eventUtil.getEvent(e);
+            alert(eventUtil.getElement(e));
+            eventUtil.stopPropagation(e);
+            eventUtil.preventDefault(e);
+        })
+
+    }
+</script>
+</body>
+</html>
