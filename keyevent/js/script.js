@@ -18,6 +18,7 @@ window.onload = function () {
 
     var flag = true;
 
+    //键盘事件
     document.onkeyup = function (event) {
 
         // console.log(event.keyCode);
