@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>运动——透明度</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0;
+
+        }
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            filter: alpha(opacity:30);
+            opacity: 0.3;
+        }
+    </style>
+    <script>
+        var timer = null,
+            alpha = 30;
+
+        window.onload = function () {
+            var oDiv = document.getElementById("div1");
+            oDiv.onmouseover = function () {
+                startMove(100);
+            }
+
+            oDiv.onmouseout = function () {
+                startMove(30);
+            }
+        }
+
+
+        function startMove(iTarget) {
+
+            var oDiv = document.getElementById("div1");
+            clearInterval(timer);
+            var speed = 0;
+
+            timer = setInterval(function () {
+                if (alpha > iTarget) {
+                    speed = -10;
+                } else {
+                    speed = 10;
+                }
+
+                if (alpha == iTarget) {
+                    clearInterval(timer);
+                } else {
+                    alpha += speed;
+                    oDiv.style.filter = 'alpha(opacity:' + alpha + ')';
+                    oDiv.style.opacity = alpha / 100;
+                }
+            },100);
+
+
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>
