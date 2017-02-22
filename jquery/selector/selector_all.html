@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery选择器之全选择器（*选择器）</title>
+    <style>
+        div {
+            width: 100px;
+            height: 90px;
+            float: left;
+            padding: 5px;
+            margin: 5px;
+            background-color: #EEEEEE;
+        }
+    </style>
+</head>
+<body>
+<div class="aaron">
+    <p>class="aaron"</p>
+    <p>选中</p>
+</div>
+<div class="aaron">
+    <p>class="aaron"</p>
+    <p>选中</p>
+</div>
+<div class="imooc">
+    <p>class="imooc"</p>
+    <p>jQuery选中</p>
+</div>
+<div class="imooc">
+    <p>class="imooc"</p>
+    <p>jQuery选中</p>
+</div>
+
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+<script>
+    var element1 = document.getElementsByTagName('*');
+    var element2 = $('*');
+    //===表示数据和类型都相等
+    if (element1.length === element2.length) {
+        element2.css('border','1px solid red');
+    }
+</script>
+
+</body>
+</html>

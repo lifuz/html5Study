@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery对象转换成dom对象</title>
+</head>
+<body>
+<div>元素1</div>
+<div>元素2</div>
+<div>元素3</div>
+
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+<script>
+    var $div = $('div');
+    var div = $div.get(0);
+    div.style.color = "red";
+</script>
+</body>
+</html>
